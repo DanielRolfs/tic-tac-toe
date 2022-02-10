@@ -1,3 +1,11 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -10,6 +18,12 @@ td{
     width: 133px;
     height: 133px;
     border: 5px solid black;
+    cursor: pointer;
+    position: relative;
+}
+
+td:hover{
+    background-color: orange;
 }
 
 tr:first-child td{
@@ -28,19 +42,98 @@ tr td:last-child {
     border-right: 0;
 }
 
-.shape{
-   
+.shape {
     width: 80px;
     height: 80px;
     position: absolute;
     top: 26px;
     left: 26px;
     bottom: 0px;
-
 }
 
 .center{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.d-none{
+    display: none;
+}
+
+.player-panel{
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.player-panel div{
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.player-panel img{
+    margin-left:  10px;
+    margin-right: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+.player-inactive{
+    opacity: 0.5;
+}
+
+.horizontal_line{
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    position: absolute;
+    transform: scaleX(0.0);
+    transform: scaleY(0.0);
+    transition: transform 225ms ease-in-out;
+    z-index: 1;
+}
+
+.make_vertikal{
+    transform: rotate(90deg) scaleX(0.0);
+}
+
+.game_over{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    animation: zoomIn 255ms ease-in-out;
+}
+
+@keyframes zoomIn{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.restart_button{
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #1C0B7F;
+    z-index: 2;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    bottom: 246px;
+    cursor: pointer;
+}
+
+.restart_button:hover{
+    background-color: #2e12c9;
 }
